@@ -1,6 +1,28 @@
+# Source
 src/
-.eslintrc.cjs
+__tests__/
+static/
+
+# Development
 index.html
+.storybook/
+coverage/
+storybook-static/
+
+# Config
+eslint.config.js
+jest.config.js
+vite.config.js
 tsconfig.json
-vite.config.ts
-yarn.lock
+tsconfig.base.json
+tsconfig.app.json
+tsconfig.test.json
+tsconfig.storybook.json
+.prettierrc
+.prettierignore
+.gitignore
+.npmignore
+
+# Lock files
+package-lock.json
+*.lock

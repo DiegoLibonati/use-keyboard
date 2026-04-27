@@ -1,36 +1,15 @@
 {
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "dist/types",
-    "rootDir": "src",
-    "declaration": true,
-    "emitDeclarationOnly": true,
-    "declarationMap": false,
-    "baseUrl": ".",
-    "paths": {
-      "@src/*": ["src/*"],
-      "@tests/*": ["tests/*"]
-    },
-    "module": "ESNext",
-    "target": "ESNext",
-    "moduleResolution": "Node",
-    "jsx": "react-jsx",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "useUnknownInCatchVariables": false
+    "types": ["vite/client"]
   },
   "include": ["src"],
   "exclude": [
     "node_modules",
     "dist",
-    "tests",
     "**/*.test.ts",
     "**/*.test.tsx",
-    "**/*.stories.ts",
-    "**/*.stories.tsx"
+    "**/*.spec.ts",
+    "**/*.spec.tsx"
   ]
 }

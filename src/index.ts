@@ -1,4 +1,6 @@
-export type { UseKeyBoardProps } from "@src/entities/props";
-export type { UseKeyBoard } from "@src/entities/app";
+// Types
+export type { UseKeyboardProps } from "@/types/props";
+export type { UseKeyboard, KeyConfig, KeyModifiers } from "@/types/app";
 
-export { useKeyBoard } from "@src/hooks/useKeyBoard";
+// Hooks
+export { useKeyboard } from "@/hooks/useKeyboard/useKeyboard";

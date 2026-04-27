@@ -1,8 +1,14 @@
 dist
 build
 node_modules
+coverage
+storybook-static
+
 .env
 env
 yarn.lock
 package-lock.json
 *storybook.log
+*.log
+.DS_Store
+Thumbs.db
