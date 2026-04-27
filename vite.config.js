@@ -6,7 +6,7 @@ import dts from "vite-plugin-dts";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const LIB_NAME = "use-keyboard-react";
+const LIB_NAME = "usekeyboard-react";
 
 export default defineConfig({
   plugins: [

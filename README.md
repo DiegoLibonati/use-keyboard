@@ -11,18 +11,18 @@
 #### NPM
 
 ```bash
-npm install use-keyboard-react
+npm install usekeyboard-react
 ```
 
 #### YARN
 
 ```bash
-yarn add use-keyboard-react
+yarn add usekeyboard-react
 ```
 
 ```jsx
 import { useState } from "react";
-import { useKeyboard } from "use-keyboard-react";
+import { useKeyboard } from "usekeyboard-react";
 import "./App.css";
 
 export const HomePage = (): JSX.Element => {
@@ -70,7 +70,7 @@ Ideally, the hook should be used in the parent component of the current page bei
 
 ### Npm PACKAGE Link
 
-`https://www.npmjs.com/package/use-keyboard-react`
+[`https://www.npmjs.com/package/usekeyboard-react`](https://www.npmjs.com/package/usekeyboard-react)
 
 ### Props
 
@@ -112,7 +112,7 @@ If you want to declare 2 or more keys that have the same function to be executed
 In this case the keys 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9 will execute the command in console: Hi, im a number.
 
 ```jsx
-import { useKeyboard } from "use-keyboard-react";
+import { useKeyboard } from "usekeyboard-react";
 import "./App.css";
 
 export const HomePage = (): JSX.Element => {
@@ -142,7 +142,7 @@ export const HomePage = (): JSX.Element => {
 You can require one or more modifier keys to be held for a binding to fire using the `modifiers` field on each key entry.
 
 ```jsx
-import { useKeyboard } from "use-keyboard-react";
+import { useKeyboard } from "usekeyboard-react";
 
 export const HomePage = (): JSX.Element => {
   useKeyboard({
@@ -178,7 +178,7 @@ export const HomePage = (): JSX.Element => {
 By default the hook listens on `keydown`. Use `trigger` to change this behaviour.
 
 ```jsx
-import { useKeyboard } from "use-keyboard-react";
+import { useKeyboard } from "usekeyboard-react";
 
 export const HomePage = (): JSX.Element => {
   useKeyboard({
@@ -199,7 +199,7 @@ Use the `enabled` prop to enable or disable all keyboard listeners without unmou
 
 ```jsx
 import { useState } from "react";
-import { useKeyboard } from "use-keyboard-react";
+import { useKeyboard } from "usekeyboard-react";
 
 export const HomePage = (): JSX.Element => {
   const [active, setActive] = useState(true);
@@ -230,7 +230,7 @@ We can also pass inside our execution function the `keydown` event.
 `e` refers to Javascript's `KeyboardEvent`.
 
 ```jsx
-import { useKeyboard } from "use-keyboard-react";
+import { useKeyboard } from "usekeyboard-react";
 import "./App.css";
 
 export const HomePage = (): JSX.Element => {
@@ -264,7 +264,7 @@ Here we are creating actions for when the up, down, right, left, and enter keys 
 
 ```jsx
 import { useState } from "react";
-import { useKeyboard } from "use-keyboard-react";
+import { useKeyboard } from "usekeyboard-react";
 
 const [focusedIndex, setFocusedIndex] = useState<number>(0);
 useKeyboard({

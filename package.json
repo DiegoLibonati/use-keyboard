@@ -1,16 +1,16 @@
 {
-  "name": "use-keyboard-react",
+  "name": "usekeyboard-react",
   "version": "2.0.0",
   "description": "UseKeyboard is a lightweight, fully-typed React hook library for handling keyboard interactions declaratively.",
   "type": "module",
-  "main": "dist/use-keyboard-react.umd.js",
-  "module": "dist/use-keyboard-react.es.js",
+  "main": "dist/usekeyboard-react.umd.js",
+  "module": "dist/usekeyboard-react.es.js",
   "types": "dist/types/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/types/index.d.ts",
-      "import": "./dist/use-keyboard-react.es.js",
-      "require": "./dist/use-keyboard-react.umd.js"
+      "import": "./dist/usekeyboard-react.es.js",
+      "require": "./dist/usekeyboard-react.umd.js"
     }
   },
   "sideEffects": false,
@@ -32,7 +32,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/DiegoLibonati/use-keyboard.git",
-    "directory": "packages/use-keyboard-react"
+    "directory": "packages/usekeyboard-react"
   },
   "peerDependencies": {
     "react": ">=19.0.0",
