@@ -6,7 +6,13 @@
   UseKeyboard is a lightweight, fully-typed React hook library for handling keyboard interactions declaratively. Instead of scattering <code>addEventListener</code> calls or <code>onKeyDown</code> handlers across your components, <code>useKeyboard</code> lets you define all your keyboard bindings in one configuration object. You specify which keys to listen for, what function to execute when they are pressed, and optionally restrict matches to specific modifier combinations (Ctrl, Shift, Alt, Meta). The hook supports listening on <code>keydown</code>, <code>keyup</code>, or both events simultaneously, and can be toggled on or off at runtime without unmounting. A <code>debug</code> mode logs each registered key to the console so you can verify your configuration at a glance, and <code>keysLoaded</code> is returned so you can inspect which keys are currently active. The library is zero-dependency (only React as a peer), tree-shakeable, and ships both ESM and UMD builds.
 </p>
 
-### Usage
+## Description
+
+The sections below walk you from installing the package to using every feature it exposes: a minimal setup, the full API reference, and a series of progressively richer examples.
+
+### Installation
+
+Install the package using your preferred package manager:
 
 #### NPM
 
@@ -19,6 +25,10 @@ npm install usekeyboard-react
 ```bash
 yarn add usekeyboard-react
 ```
+
+### Basic Usage
+
+Once installed, import `useKeyboard` and declare your bindings inside the component that owns the page or view:
 
 ```jsx
 import { useState } from "react";
@@ -64,15 +74,11 @@ export const HomePage = (): JSX.Element => {
 
 Ideally, the hook should be used in the parent component of the current page being rendered. That is to say, we will call it only once based on the page we are rendering. In this case in HomePage as an example.
 
-### Portfolio Link
+### API Reference
 
-[`https://www.diegolibonati.com.ar/#/project/use-keyboard`](https://www.diegolibonati.com.ar/#/project/use-keyboard)
+The hook accepts a single `config` object. The tables below describe every field you can pass.
 
-### Npm PACKAGE Link
-
-[`https://www.npmjs.com/package/usekeyboard-react`](https://www.npmjs.com/package/usekeyboard-react)
-
-### Props
+#### Props
 
 | Prop           | Description                                                                                                                                                                                                                                  | Type                             | Default     |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- | ----------- |
@@ -82,7 +88,7 @@ Ideally, the hook should be used in the parent component of the current page bei
 | `enabled`      | When `false`, no event listeners are attached and no keyboard events are handled. Useful for conditionally disabling keyboard shortcuts without unmounting the component.                                                                    | `boolean`                        | `true`      |
 | `trigger`      | Which DOM event type to listen on. `"keydown"` fires while the key is held, `"keyup"` fires on release, `"both"` registers listeners for both events.                                                                                        | `"keydown" \| "keyup" \| "both"` | `"keydown"` |
 
-### KeyConfig
+#### KeyConfig
 
 Each item in the `keys` array accepts the following fields:
 
@@ -92,7 +98,7 @@ Each item in the `keys` array accepts the following fields:
 | `fn`        | The function to execute when the key is matched. Receives the native `KeyboardEvent`.                                              | `(e: KeyboardEvent) => void` | ✓        |
 | `modifiers` | Optional modifier keys that must be active for the binding to fire.                                                                | `KeyModifiers`               |          |
 
-### KeyModifiers
+#### KeyModifiers
 
 | Field   | Description                                             | Type      |
 | ------- | ------------------------------------------------------- | --------- |
@@ -105,7 +111,11 @@ Example if debug prop is in true:
 
 ![debug-true](./public/loaded.png)
 
-## Multiple Keys with the same Function
+### Examples
+
+With the API in mind, the following recipes show how to combine those fields for common keyboard-handling patterns.
+
+#### Multiple Keys with the same Function
 
 If you want to declare 2 or more keys that have the same function to be executed you can use the string `"|"`.
 
@@ -137,7 +147,7 @@ export const HomePage = (): JSX.Element => {
 };
 ```
 
-## Using Modifier Keys
+#### Using Modifier Keys
 
 You can require one or more modifier keys to be held for a binding to fire using the `modifiers` field on each key entry.
 
@@ -173,7 +183,7 @@ export const HomePage = (): JSX.Element => {
 };
 ```
 
-## Controlling the Trigger Event
+#### Controlling the Trigger Event
 
 By default the hook listens on `keydown`. Use `trigger` to change this behaviour.
 
@@ -193,7 +203,7 @@ export const HomePage = (): JSX.Element => {
 };
 ```
 
-## Toggling the Hook at Runtime
+#### Toggling the Hook at Runtime
 
 Use the `enabled` prop to enable or disable all keyboard listeners without unmounting the component.
 
@@ -223,7 +233,7 @@ export const HomePage = (): JSX.Element => {
 };
 ```
 
-## Using the keyboard event (KeyboardEvent)
+#### Using the keyboard event (KeyboardEvent)
 
 We can also pass inside our execution function the `keydown` event.
 
@@ -258,7 +268,7 @@ export const HomePage = (): JSX.Element => {
 };
 ```
 
-### Another Example
+#### Another Example
 
 Here we are creating actions for when the up, down, right, left, and enter keys on the keyboard are pressed. For each assigned key, a function to execute is assigned for that specific key. Additionally, in the dependencies array, the dependencies for channels and focusedIndex are passed so that the functions inside the keys are updated based on the current state of both dependencies. Finally, debug is set to True so that development messages appear in the console to see information about our hook.
 
@@ -327,9 +337,9 @@ useKeyboard({
 });
 ```
 
-## Best practices or Other uses
+#### Best practices or Other uses
 
-### You are free to create new best practices, choose your own style, or put your own touch on it. You are free.
+You are free to create new best practices, choose your own style, or put your own touch on it. You are free.
 
 For better usage, we can create a variable that contains our array of keys, saving space in the code. For example:
 
@@ -381,7 +391,7 @@ useKeyboard({
 });
 ```
 
-## Develop
+## Getting Started
 
 If you want to develop or collaborate with this project, please follow point by point:
 
@@ -396,6 +406,8 @@ The Storybook playground will be available at `http://localhost:6006`
 
 ## Testing
 
+With the project running locally, you can verify the hook's behaviour against the test suite:
+
 1. Navigate to the project folder
 2. Execute: `npm test`
 
@@ -405,7 +417,9 @@ For coverage report:
 npm run test:coverage
 ```
 
-## Security
+## Security Audit
+
+Beyond the test suite, you should also check the dependency tree for known vulnerabilities before publishing or pulling updates.
 
 ### npm audit
 
@@ -418,3 +432,11 @@ npm audit
 ## Known Issues
 
 None at the moment.
+
+## Portfolio link
+
+[`https://www.diegolibonati.com.ar/#/project/use-keyboard`](https://www.diegolibonati.com.ar/#/project/use-keyboard)
+
+### Npm package link
+
+[`https://www.npmjs.com/package/usekeyboard-react`](https://www.npmjs.com/package/usekeyboard-react)
